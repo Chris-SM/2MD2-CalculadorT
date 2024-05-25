@@ -11,22 +11,19 @@
             frase1 = frase1.replace(",", '.')
             var frase2 = document.getElementById("Vezes").value;
             frase2 = frase2.replace(",", '.')
+            if(frase1 == "" || frase2 == "")
+            {
+                Certo = false;
+                alert("Invalido: Campo Vazio");
+            }
+            else{Certo = true;}
             if(isNaN(frase1) || isNaN(frase2)){
             Certo = false;
             alert("Invalido: Letra");}
-            if(!Certo){
-            if(document.getElementById("Num").value == "" || document.getElementById("Vezes").value == "")
+            else if(Certo)
             {
-                Certo = false;
-            alert("Invalido: Campo Vazio");
-            }
-            else
-            {
-                Certo = true;
-                window.location.href = "main.php";
-            }}
-            else{
-                window.location.href = "main.php";
+                document.getElementById("form").action = "main.php";
+                
             }
         }
         function Mud(){
@@ -38,7 +35,7 @@
 <body>
     <h2>Calculando Tabela</h2>
     <label style="font-size: small;">Funciona ver tabuada de numero com virgula e quantidade com virgula e arredondada para maior</label><br><br>
-    <form action="main.php" method="get">
+    <form action="index.html" method="get" id="form">
         <label style="font-size: large;">Digite o numero que quer fazer Tabuada:</label>
         <input type="text" onchange="Mud()" name="Num" id="Num"><br><br>
         <label style="font-size: large;">Digite até onde quer que vá:</label>
