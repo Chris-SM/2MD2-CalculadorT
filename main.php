@@ -1,6 +1,8 @@
 <?php
 $Numer = $_GET["Num"];
 $Quant = $_GET["Vezes"];
+$Numer = str_replace(",",".",$Numer);
+$Quant = str_replace(",",".",$Quant);
 echo "<center>Tabuada do ",$Numer," até ",$Quant,"<br><br>";
 echo "<style> table, th, td { border: 1px solid black;}</style>
     <table><tr><td style='font-size: large;color: darkblue;background-color: lightgray;'>Calculo</td>
